@@ -206,41 +206,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-fq-FSb">
-                                <rect key="frame" x="117.5" y="268.5" width="140" height="130"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO CSTracing!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELT-fg-70K">
+                                <rect key="frame" x="16" y="50" width="343" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="152" id="KQm-hf-xRC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-fq-FSb">
+                                <rect key="frame" x="131.5" y="367" width="112" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnL-Wf-MSe">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnL-Wf-MSe">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="30"/>
                                         <state key="normal" title="Report Hot Spot"/>
                                         <connections>
                                             <segue destination="wb4-pN-cwI" kind="presentation" modalPresentationStyle="fullScreen" id="3DC-hz-IkH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-kK-S4X">
-                                        <rect key="frame" x="0.0" y="50" width="140" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="112" height="30"/>
                                         <state key="normal" title="Map Tracing"/>
                                         <connections>
                                             <segue destination="hMH-T3-Ded" kind="presentation" modalPresentationStyle="fullScreen" id="k2K-mx-ECp"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI0-ij-Joh">
-                                        <rect key="frame" x="0.0" y="100" width="140" height="30"/>
-                                        <state key="normal" title="Nearby Test Centers"/>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3lh-fq-FSb" firstAttribute="centerX" secondItem="TAi-MV-Ys3" secondAttribute="centerX" id="hxL-0K-Vfo"/>
-                            <constraint firstItem="3lh-fq-FSb" firstAttribute="centerY" secondItem="TAi-MV-Ys3" secondAttribute="centerY" id="jdD-wh-uSD"/>
+                            <constraint firstItem="ELT-fg-70K" firstAttribute="top" secondItem="TAi-MV-Ys3" secondAttribute="top" constant="50" id="Chr-hI-6Vc"/>
+                            <constraint firstItem="ELT-fg-70K" firstAttribute="centerX" secondItem="TAi-MV-Ys3" secondAttribute="centerX" id="LkD-1Q-Umz"/>
+                            <constraint firstItem="ELT-fg-70K" firstAttribute="centerX" secondItem="3lh-fq-FSb" secondAttribute="centerX" id="VGb-KE-yGA"/>
+                            <constraint firstItem="ELT-fg-70K" firstAttribute="leading" secondItem="jcQ-b2-kav" secondAttribute="leadingMargin" id="dfz-4f-QhU"/>
+                            <constraint firstItem="TAi-MV-Ys3" firstAttribute="bottom" secondItem="3lh-fq-FSb" secondAttribute="bottom" constant="200" id="meu-60-xjL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TAi-MV-Ys3"/>
                     </view>
+                    <connections>
+                        <outlet property="TitleLabel" destination="ELT-fg-70K" id="9Kn-l6-InQ"/>
+                        <outlet property="mapButton" destination="5uM-kK-S4X" id="Yet-u2-Z4K"/>
+                        <outlet property="reportButton" destination="mnL-Wf-MSe" id="Y7g-pa-9Dj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJd-rf-7Hg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="180"/>
+            <point key="canvasLocation" x="301.60000000000002" y="179.46026986506749"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="7hF-Qq-Irl">
@@ -267,14 +280,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX4-zT-SKp">
-                                <rect key="frame" x="156.5" y="181" width="62" height="30"/>
-                                <state key="normal" title="Recenter"/>
+                                <rect key="frame" x="156.5" y="177" width="62" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="  center"/>
                                 <connections>
                                     <action selector="recenterPressed:" destination="hMH-T3-Ded" eventType="touchUpInside" id="xJp-bf-Qxc"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="2Wa-Ts-emM">
-                                <rect key="frame" x="20" y="40" width="335" height="131"/>
+                                <rect key="frame" x="20" y="40" width="335" height="127"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
                                     <!--2020-01-01 11:00:00 +0000-->
                                 </date>

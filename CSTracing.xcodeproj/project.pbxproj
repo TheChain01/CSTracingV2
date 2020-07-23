@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4822B18924CA410700E73A9F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4822B18824CA410600E73A9F /* Utilities.swift */; };
 		4880C63824CA16F5004A8E54 /* timeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C63724CA16F5004A8E54 /* timeViewController.swift */; };
 		4880C63A24CA171C004A8E54 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C63924CA171C004A8E54 /* Global.swift */; };
 		4880C63C24CA1903004A8E54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		3944DDA0E8DD68D8D068A055 /* Pods-CSTracing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSTracing.release.xcconfig"; path = "Target Support Files/Pods-CSTracing/Pods-CSTracing.release.xcconfig"; sourceTree = "<group>"; };
+		4822B18824CA410600E73A9F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4880C63724CA16F5004A8E54 /* timeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeViewController.swift; sourceTree = "<group>"; };
 		4880C63924CA171C004A8E54 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		606A94DA211B803C008FF650 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4822B18824CA410600E73A9F /* Utilities.swift */,
 				606A94C9211B7FCA008FF650 /* Assets.xcassets */,
 				606A94CE211B7FCA008FF650 /* Info.plist */,
 				606A94CB211B7FCA008FF650 /* LaunchScreen.storyboard */,
@@ -297,6 +300,7 @@
 				606A94D9211B802D008FF650 /* PlaceAnnotation.swift in Sources */,
 				4880C64A24CA1FDC004A8E54 /* ViewController.swift in Sources */,
 				606A94E3211BBDD8008FF650 /* MKPlacemark+Extension.swift in Sources */,
+				4822B18924CA410700E73A9F /* Utilities.swift in Sources */,
 				606A94C3211B7FC9008FF650 /* AppDelegate.swift in Sources */,
 				606A94D8211B802D008FF650 /* SearchResultTableViewController.swift in Sources */,
 				4880C64224CA1DA5004A8E54 /* reportViewController.swift in Sources */,

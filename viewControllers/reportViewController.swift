@@ -117,8 +117,19 @@ class reportViewController: UITableViewController {
     @IBAction func subPressed(_ sender: Any) {
     let db = Firestore.firestore()
     var i = 0
+        
     for time in Global.MapTempInfo.timeStamps {
         let sep = time.split(separator: ",")
+        
+        guard (sep.isEmpty != true) else {
+            let homeViewController =
+                storyboard?.instantiateViewController(identifier: "HomeScreen") as? ViewController
+            
+            view.window?.rootViewController = homeViewController
+            view.window?.makeKeyAndVisible()
+            return
+        }
+        
         let t = sep[0].split(separator: "/")
         let reunified = t[0] + "-" + t[1] + "-" + t[2]
         let e = Global.MapTempInfo.coordinates[i].replacingOccurrences(of: ",", with: " * ")
@@ -127,7 +138,16 @@ class reportViewController: UITableViewController {
         db.collection("HotSpots").document("byDates").updateData([reunified: FieldValue.arrayUnion([encoded])])
         print(encoded)
         i+=1
+        
     }
+        Global.MapTempInfo.coordinates = [""]
+        Global.MapTempInfo.mapItems = [""]
+        Global.MapTempInfo.timeStamps = [""]
+        let homeViewController =
+            storyboard?.instantiateViewController(identifier: "HomeScreen") as? ViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
         
     }
     

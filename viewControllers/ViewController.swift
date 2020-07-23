@@ -10,21 +10,20 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var reportButton: UIButton!
+    
+    @IBOutlet weak var mapButton: UIButton!
+    
+    @IBOutlet weak var TitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        Utilities.stylePremium(TitleLabel)
+        Utilities.styleHollowButton(mapButton)
+        Utilities.styleHollowButton(reportButton)
     }
-    func parseAddressToFirebase(){
-        var geocoder = CLGeocoder()
-        geocoder.geocodeAddressString("your address") {
-            placemarks, error in
-            let placemark = placemarks?.first
-            let lat = placemark?.location?.coordinate.latitude
-            let lon = placemark?.location?.coordinate.longitude
-            print("Lat: \(lat), Lon: \(lon)")
-        }
-    }
+    
 
     
     @IBAction func unwindToHomePage(_ unwindSegue: UIStoryboardSegue) {

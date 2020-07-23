@@ -26,11 +26,18 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     var userRegion: CLLocation!
     let db = Firestore.firestore()
+    var userlocation: CLLocationCoordinate2D!
     
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        //SETUP FOR BUTTONS
+        Utilities.stylePremiumButton(recenterButton)
+        
+        
+        
         Map.delegate = self
         
         Map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: AnnotationReuseID.pin.rawValue)
@@ -78,8 +85,8 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         manager.stopUpdatingLocation()
 
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let userlocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
-
         self.Map.setRegion(region, animated: true)
     }
     
@@ -118,19 +125,22 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     func markerUpdate(places: [String]?){
-        
+        Map.removeAnnotations(Map.annotations)
         guard (places != nil) else {
             return
         }
+        
         for elem in places! {
             print(elem)
             let part = elem.split(separator: "*")
             
-            let lat = part[0].replacingOccurrences(of: ",", with: ".")
-            let lon = part[1].replacingOccurrences(of: ",", with: ".")
+            var lat = part[0].replacingOccurrences(of: ",", with: ".")
+            var lon = part[1].replacingOccurrences(of: ",", with: ".")
             print(lat)
             print(lon)
             print(part[2])
+            lat = lat.trimmingCharacters(in: .whitespacesAndNewlines)
+            lon = lon.trimmingCharacters(in: .whitespacesAndNewlines)
             
             let Latitude = Double(lat)
             let Longitude = Double(lon)
