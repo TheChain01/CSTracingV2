@@ -1,94 +1,86 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Secondary view controller used to display the map and found annotations.
-*/
+//
+//  mapViewController.swift
+//  CSTracing
+//
+//  Created by Hubert Lachaîne on 2020-07-20.
+//  Copyright © 2020 Hubert Lachaîne. All rights reserved.
+//
 
 import UIKit
 import MapKit
+import CoreLocation
+import Firebase
 
-class MapViewController: UIViewController {
+class mapViewController: UIViewController, CLLocationManagerDelegate {
     
-    private enum AnnotationReuseID: String {
-        case pin
-    }
+    @IBOutlet weak var Map: MKMapView!
     
-    @IBOutlet private var mapView: MKMapView!
+    @IBOutlet weak var recenterButton: UIButton!
     
-    var mapItems: [MKMapItem]?
-    var boundingRegion: MKCoordinateRegion?
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    var locationManager: CLLocationManager!
+    var userRegion: CLLocation!
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        if let region = boundingRegion {
-            mapView.region = region
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
         }
-        mapView.delegate = self
-        
-        // Show the compass button in the navigation bar.
-        let compass = MKCompassButton(mapView: mapView)
-        compass.compassVisibility = .visible
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: compass)
-        mapView.showsCompass = false // Use the compass in the navigation bar instead.
-        
-        // Make sure `MKPinAnnotationView` and the reuse identifier is recognized in this map view.
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: AnnotationReuseID.pin.rawValue)
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+
+        let location = locations.last! as CLLocation
+        userRegion = location
+        manager.stopUpdatingLocation()
+
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+
+        self.Map.setRegion(region, animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        guard let mapItems = mapItems else { return }
-        
-        if mapItems.count == 1, let item = mapItems.first {
-            title = item.name
-        } else {
-            title = NSLocalizedString("TITLE_ALL_PLACES", comment: "All Places view controller title")
+
+    @IBAction func recenterPressed(_ sender: Any) {
+        let center = CLLocationCoordinate2D(latitude: userRegion.coordinate.latitude, longitude: userRegion.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+
+        self.Map.setRegion(region, animated: true)
+    }
+    
+    @IBAction func dateChanged(_ sender: Any) {
+        let db = Firestore.firestore()
+        let docRef = db.collection("HotSpots").document("byDates")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dateLocations = document.data()
+                print(dateLocations!)
+                //userinfo = dateLocations
+                //Constants.UserInfo.tier = userInfo!["tier"] as! String
+                
+            } else {
+                print("Document does not exist")
+            }
         }
         
-        // Turn the array of MKMapItem objects into an annotation with a title and URL that can be shown on the map.
-        let annotations = mapItems.compactMap { (mapItem) -> PlaceAnnotation? in
-            guard let coordinate = mapItem.placemark.location?.coordinate else { return nil }
-            
-            let annotation = PlaceAnnotation(coordinate: coordinate)
-            annotation.title = mapItem.name
-            annotation.url = mapItem.url
-            
-            return annotation
-        }
-        mapView.addAnnotations(annotations)
+//        var location = CLLocationCoordinate2DMake(<#T##latitude: CLLocationDegrees##CLLocationDegrees#>, <#T##longitude: CLLocationDegrees##CLLocationDegrees#>)
+//
+//        var annotation = MKPointAnnotation()
+//        annotation.coordinate.latitude = location.latitude
+//        annotation.coordinate.longitude = location.longitude
+//        annotation.title = "Confirmed Case"
+//        annotation.subtitle = "time"
+        
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
-    func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
-        print("Failed to load the map: \(error)")
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? PlaceAnnotation else { return nil }
-        
-        // Annotation views should be dequeued from a reuse queue to be efficent.
-        let view = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationReuseID.pin.rawValue, for: annotation) as? MKMarkerAnnotationView
-        view?.canShowCallout = true
-        view?.clusteringIdentifier = "searchResult"
-        
-        // If the annotation has a URL, add an extra Info button to the annotation so users can open the URL.
-        if annotation.url != nil {
-            let infoButton = UIButton(type: .detailDisclosure)
-            view?.rightCalloutAccessoryView = infoButton
-        }
-        
-        return view
-    }
-    
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let annotation = view.annotation as? PlaceAnnotation else { return }
-        if let url = annotation.url {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-    }
-}

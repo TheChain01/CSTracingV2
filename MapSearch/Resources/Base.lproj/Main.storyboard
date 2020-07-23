@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wb4-pN-cwI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fVy-Vr-MYa">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="TpQ-J8-wXr" customClass="SearchResultTableViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eBa-WV-hst">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -62,17 +62,17 @@
             <objects>
                 <viewController id="5zS-DS-oie" customClass="timeViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gis-w5-s4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-Hg-PJ4">
-                                <rect key="frame" x="-20" y="215.5" width="415" height="216"/>
+                                <rect key="frame" x="-20" y="247.5" width="415" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
                                     <!--2020-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-rv-Sqg">
-                                <rect key="frame" x="40" y="527" width="295" height="40"/>
+                                <rect key="frame" x="40" y="547" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cLx-es-40Z"/>
                                 </constraints>
@@ -110,7 +110,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="FZL-6i-mhE" customClass="reportViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="50" sectionFooterHeight="28" id="XER-az-DGE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -162,12 +162,14 @@
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="cancelPressed:" destination="FZL-6i-mhE" id="P6Q-HD-AI1"/>
+                                <segue destination="peg-s3-wIm" kind="unwind" unwindAction="unwindToHomePage:" id="VKg-NJ-jIP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="p9L-Ot-6lI">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="subPressed:" destination="FZL-6i-mhE" id="j94-N4-VoL"/>
+                                <segue destination="peg-s3-wIm" kind="unwind" unwindAction="unwindToHomePage:" id="Icj-0s-25K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -176,6 +178,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wb-iH-3mp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="peg-s3-wIm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="468" y="-666"/>
         </scene>
@@ -196,8 +199,123 @@
             </objects>
             <point key="canvasLocation" x="-450" y="-666"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="d4S-Lw-gxt">
+            <objects>
+                <viewController id="fVy-Vr-MYa" customClass="ViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jcQ-b2-kav">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-fq-FSb">
+                                <rect key="frame" x="117.5" y="268.5" width="140" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnL-Wf-MSe">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                        <state key="normal" title="Report Hot Spot"/>
+                                        <connections>
+                                            <segue destination="wb4-pN-cwI" kind="presentation" modalPresentationStyle="fullScreen" id="3DC-hz-IkH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-kK-S4X">
+                                        <rect key="frame" x="0.0" y="50" width="140" height="30"/>
+                                        <state key="normal" title="Map Tracing"/>
+                                        <connections>
+                                            <segue destination="hMH-T3-Ded" kind="presentation" modalPresentationStyle="fullScreen" id="k2K-mx-ECp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI0-ij-Joh">
+                                        <rect key="frame" x="0.0" y="100" width="140" height="30"/>
+                                        <state key="normal" title="Nearby Test Centers"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3lh-fq-FSb" firstAttribute="centerX" secondItem="TAi-MV-Ys3" secondAttribute="centerX" id="hxL-0K-Vfo"/>
+                            <constraint firstItem="3lh-fq-FSb" firstAttribute="centerY" secondItem="TAi-MV-Ys3" secondAttribute="centerY" id="jdD-wh-uSD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TAi-MV-Ys3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJd-rf-7Hg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="180"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="7hF-Qq-Irl">
+            <objects>
+                <viewController id="hMH-T3-Ded" customClass="mapViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JVf-A9-Gct">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ea1-Zn-5DA">
+                                <rect key="frame" x="20" y="221" width="335" height="426"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXo-TE-eqa">
+                                <rect key="frame" x="20" y="0.0" width="45" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="nus-xn-BWa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="&lt;—">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="asm-9T-E0q" kind="unwind" unwindAction="unwindToHomePage:" id="Wdy-EW-hdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX4-zT-SKp">
+                                <rect key="frame" x="156.5" y="181" width="62" height="30"/>
+                                <state key="normal" title="Recenter"/>
+                                <connections>
+                                    <action selector="recenterPressed:" destination="hMH-T3-Ded" eventType="touchUpInside" id="xJp-bf-Qxc"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="2Wa-Ts-emM">
+                                <rect key="frame" x="20" y="40" width="335" height="131"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
+                                    <!--2020-01-01 11:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="hMH-T3-Ded" eventType="valueChanged" id="CMG-uF-09v"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nXo-TE-eqa" firstAttribute="top" secondItem="XvO-oo-imL" secondAttribute="top" id="27e-zi-Uhc"/>
+                            <constraint firstItem="ea1-Zn-5DA" firstAttribute="top" secondItem="XvO-oo-imL" secondAttribute="top" constant="221" id="Fr9-aw-hg7"/>
+                            <constraint firstItem="nXo-TE-eqa" firstAttribute="leading" secondItem="XvO-oo-imL" secondAttribute="leading" constant="20" id="G5m-0A-1Yj"/>
+                            <constraint firstItem="2Wa-Ts-emM" firstAttribute="top" secondItem="XvO-oo-imL" secondAttribute="top" constant="40" id="Jaf-TM-0KV"/>
+                            <constraint firstItem="ea1-Zn-5DA" firstAttribute="leading" secondItem="XvO-oo-imL" secondAttribute="leading" constant="20" id="Llt-S4-4hL"/>
+                            <constraint firstItem="XvO-oo-imL" firstAttribute="trailing" secondItem="ea1-Zn-5DA" secondAttribute="trailing" constant="20" id="a4c-tU-tdM"/>
+                            <constraint firstItem="2Wa-Ts-emM" firstAttribute="leading" secondItem="XvO-oo-imL" secondAttribute="leading" constant="20" id="bIv-Rc-9W2"/>
+                            <constraint firstItem="XvO-oo-imL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nXo-TE-eqa" secondAttribute="trailing" symbolic="YES" id="i3g-2J-8Sc"/>
+                            <constraint firstItem="cX4-zT-SKp" firstAttribute="centerX" secondItem="XvO-oo-imL" secondAttribute="centerX" id="iDO-KO-chb"/>
+                            <constraint firstItem="ea1-Zn-5DA" firstAttribute="bottom" secondItem="XvO-oo-imL" secondAttribute="bottom" constant="-20" id="jyy-5M-zYq"/>
+                            <constraint firstItem="cX4-zT-SKp" firstAttribute="top" secondItem="2Wa-Ts-emM" secondAttribute="bottom" constant="10" id="uPe-QW-zVR"/>
+                            <constraint firstItem="XvO-oo-imL" firstAttribute="trailing" secondItem="2Wa-Ts-emM" secondAttribute="trailing" constant="20" id="vLQ-0O-kei"/>
+                            <constraint firstItem="ea1-Zn-5DA" firstAttribute="top" secondItem="cX4-zT-SKp" secondAttribute="bottom" constant="10" id="wbL-aC-x0g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XvO-oo-imL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="piN-xD-qYC"/>
+                    <connections>
+                        <outlet property="Map" destination="ea1-Zn-5DA" id="Uzg-EB-xyS"/>
+                        <outlet property="datePicker" destination="2Wa-Ts-emM" id="hmd-hK-eGP"/>
+                        <outlet property="recenterButton" destination="cX4-zT-SKp" id="Svf-kv-bPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeY-X0-RVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="asm-9T-E0q" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1295" y="179"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rZL-pj-lvn"/>
+        <segue reference="HMh-DV-Yil"/>
     </inferredMetricsTieBreakers>
 </document>

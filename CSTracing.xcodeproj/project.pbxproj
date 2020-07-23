@@ -12,11 +12,12 @@
 		4880C63C24CA1903004A8E54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */; };
 		4880C64224CA1DA5004A8E54 /* reportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64124CA1DA5004A8E54 /* reportViewController.swift */; };
 		4880C64424CA1DFD004A8E54 /* testInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */; };
+		4880C64824CA1FBC004A8E54 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64724CA1FBC004A8E54 /* mapViewController.swift */; };
+		4880C64A24CA1FDC004A8E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64924CA1FDC004A8E54 /* ViewController.swift */; };
 		606A94C3211B7FC9008FF650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A94C2211B7FC9008FF650 /* AppDelegate.swift */; };
 		606A94C8211B7FC9008FF650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606A94C6211B7FC9008FF650 /* Main.storyboard */; };
 		606A94CA211B7FCA008FF650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606A94C9211B7FCA008FF650 /* Assets.xcassets */; };
 		606A94CD211B7FCA008FF650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606A94CB211B7FCA008FF650 /* LaunchScreen.storyboard */; };
-		606A94D7211B802D008FF650 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A94D4211B802C008FF650 /* MapViewController.swift */; };
 		606A94D8211B802D008FF650 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */; };
 		606A94D9211B802D008FF650 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A94D6211B802D008FF650 /* PlaceAnnotation.swift */; };
 		606A94DC211B80CF008FF650 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 606A94DB211B80CF008FF650 /* README.md */; };
@@ -33,13 +34,14 @@
 		4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4880C64124CA1DA5004A8E54 /* reportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportViewController.swift; sourceTree = "<group>"; };
 		4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testInputTableViewCell.swift; sourceTree = "<group>"; };
+		4880C64724CA1FBC004A8E54 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		4880C64924CA1FDC004A8E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		606A94BF211B7FC9008FF650 /* CSTracing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTracing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606A94C2211B7FC9008FF650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606A94C7211B7FC9008FF650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		606A94C9211B7FCA008FF650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		606A94CC211B7FCA008FF650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		606A94CE211B7FCA008FF650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		606A94D4211B802C008FF650 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		606A94D6211B802D008FF650 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		606A94DB211B80CF008FF650 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -82,11 +84,12 @@
 		4880C63E24CA1BF8004A8E54 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				606A94D4211B802C008FF650 /* MapViewController.swift */,
 				4880C63724CA16F5004A8E54 /* timeViewController.swift */,
 				606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */,
 				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
 				4880C64124CA1DA5004A8E54 /* reportViewController.swift */,
+				4880C64724CA1FBC004A8E54 /* mapViewController.swift */,
+				4880C64924CA1FDC004A8E54 /* ViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -289,12 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4880C63A24CA171C004A8E54 /* Global.swift in Sources */,
+				4880C64824CA1FBC004A8E54 /* mapViewController.swift in Sources */,
 				606A94DF211B93CB008FF650 /* SuggestionsTableViewController.swift in Sources */,
 				606A94D9211B802D008FF650 /* PlaceAnnotation.swift in Sources */,
+				4880C64A24CA1FDC004A8E54 /* ViewController.swift in Sources */,
 				606A94E3211BBDD8008FF650 /* MKPlacemark+Extension.swift in Sources */,
 				606A94C3211B7FC9008FF650 /* AppDelegate.swift in Sources */,
 				606A94D8211B802D008FF650 /* SearchResultTableViewController.swift in Sources */,
-				606A94D7211B802D008FF650 /* MapViewController.swift in Sources */,
 				4880C64224CA1DA5004A8E54 /* reportViewController.swift in Sources */,
 				4880C64424CA1DFD004A8E54 /* testInputTableViewCell.swift in Sources */,
 				4880C63824CA16F5004A8E54 /* timeViewController.swift in Sources */,
