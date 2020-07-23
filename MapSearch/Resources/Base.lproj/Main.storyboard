@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w26-b6-vmW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wb4-pN-cwI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,12 +7,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map Search-->
+        <!--WHERE?-->
         <scene sceneID="ub2-Jt-Vj7">
             <objects>
-                <tableViewController id="TpQ-J8-wXr" customClass="SearchResultTableViewController" customModule="MapSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TpQ-J8-wXr" customClass="SearchResultTableViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eBa-WV-hst">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -46,7 +46,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Map Search" id="lbr-sc-yth">
+                    <navigationItem key="navigationItem" title="WHERE?" id="lbr-sc-yth">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="View All" id="vYj-eD-j4s"/>
                     </navigationItem>
                     <connections>
@@ -55,40 +55,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2im-l3-9oE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316.875" y="30"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QNE-Ex-Wuc">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="w26-b6-vmW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vII-87-i5a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="TpQ-J8-wXr" kind="relationship" relationship="rootViewController" id="noi-Fy-9uK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tjP-fV-2lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-450" y="30"/>
+            <point key="canvasLocation" x="1209" y="-665"/>
         </scene>
         <!--WHEN?-->
         <scene sceneID="v2l-lG-VYi">
             <objects>
-                <viewController id="5zS-DS-oie" customClass="timeViewController" customModule="MapSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5zS-DS-oie" customClass="timeViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gis-w5-s4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-Hg-PJ4">
-                                <rect key="frame" x="-20" y="273.5" width="415" height="216"/>
+                                <rect key="frame" x="-20" y="215.5" width="415" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
                                     <!--2020-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-rv-Sqg">
-                                <rect key="frame" x="40" y="547" width="295" height="40"/>
+                                <rect key="frame" x="40" y="527" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cLx-es-40Z"/>
                                 </constraints>
@@ -96,6 +80,7 @@
                                 <state key="normal" title="SUBMIT"/>
                                 <connections>
                                     <action selector="submitPressed:" destination="5zS-DS-oie" eventType="touchUpInside" id="vci-wI-gu7"/>
+                                    <segue destination="FZL-6i-mhE" kind="show" id="rZL-pj-lvn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +103,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82z-Fl-mgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="-824"/>
+            <point key="canvasLocation" x="2022" y="-666"/>
+        </scene>
+        <!--Report Form-->
+        <scene sceneID="oEC-22-crt">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="FZL-6i-mhE" customClass="reportViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="50" sectionFooterHeight="28" id="XER-az-DGE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InputCell" id="Zbi-z7-UJM" customClass="TextInputTableViewCell" customModule="CSTracing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zbi-z7-UJM" id="9fs-O8-Evd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8c-LF-3KG">
+                                            <rect key="frame" x="-4" y="4" width="383" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="e05-Mv-cJZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="s8c-LF-3KG" firstAttribute="centerX" secondItem="9fs-O8-Evd" secondAttribute="centerX" id="Spw-rx-QjW"/>
+                                        <constraint firstItem="s8c-LF-3KG" firstAttribute="top" secondItem="9fs-O8-Evd" secondAttribute="topMargin" constant="-7" id="YLX-6t-XCs"/>
+                                        <constraint firstItem="s8c-LF-3KG" firstAttribute="leading" secondItem="9fs-O8-Evd" secondAttribute="leadingMargin" constant="-20" id="ikK-pB-IEY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="s8c-LF-3KG" id="hX6-Pg-n2n"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" id="IXh-9S-vrk">
+                                <rect key="frame" x="0.0" y="88" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IXh-9S-vrk" id="P5F-qr-OHv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TpQ-J8-wXr" kind="show" identifier="addNew" id="jPY-GC-71c"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FZL-6i-mhE" id="hy7-3B-gA2"/>
+                            <outlet property="delegate" destination="FZL-6i-mhE" id="Z5T-0U-BKo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Report Form" id="hZX-GB-ysc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1nq-3g-GyG">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="cancelPressed:" destination="FZL-6i-mhE" id="P6Q-HD-AI1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="p9L-Ot-6lI">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="subPressed:" destination="FZL-6i-mhE" id="j94-N4-VoL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="submitButt" destination="p9L-Ot-6lI" id="iOB-MQ-lYA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wb-iH-3mp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="-666"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KDE-lb-mrc">
+            <objects>
+                <navigationController storyboardIdentifier="reportView" definesPresentationContext="YES" id="wb4-pN-cwI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HHr-xR-lmI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S5f-vV-WnA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FZL-6i-mhE" kind="relationship" relationship="rootViewController" id="HMh-DV-Yil"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pn-1X-Bes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-450" y="-666"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rZL-pj-lvn"/>
+    </inferredMetricsTieBreakers>
 </document>

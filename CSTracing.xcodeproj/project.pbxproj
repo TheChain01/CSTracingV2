@@ -10,6 +10,8 @@
 		4880C63824CA16F5004A8E54 /* timeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C63724CA16F5004A8E54 /* timeViewController.swift */; };
 		4880C63A24CA171C004A8E54 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C63924CA171C004A8E54 /* Global.swift */; };
 		4880C63C24CA1903004A8E54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */; };
+		4880C64224CA1DA5004A8E54 /* reportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64124CA1DA5004A8E54 /* reportViewController.swift */; };
+		4880C64424CA1DFD004A8E54 /* testInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */; };
 		606A94C3211B7FC9008FF650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A94C2211B7FC9008FF650 /* AppDelegate.swift */; };
 		606A94C8211B7FC9008FF650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606A94C6211B7FC9008FF650 /* Main.storyboard */; };
 		606A94CA211B7FCA008FF650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606A94C9211B7FCA008FF650 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		4880C63724CA16F5004A8E54 /* timeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeViewController.swift; sourceTree = "<group>"; };
 		4880C63924CA171C004A8E54 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		4880C63B24CA1903004A8E54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4880C64124CA1DA5004A8E54 /* reportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportViewController.swift; sourceTree = "<group>"; };
+		4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testInputTableViewCell.swift; sourceTree = "<group>"; };
 		606A94BF211B7FC9008FF650 /* CSTracing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTracing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606A94C2211B7FC9008FF650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606A94C7211B7FC9008FF650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 				4880C63724CA16F5004A8E54 /* timeViewController.swift */,
 				606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */,
 				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
+				4880C64124CA1DA5004A8E54 /* reportViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			children = (
 				606A94DB211B80CF008FF650 /* README.md */,
 				4880C63924CA171C004A8E54 /* Global.swift */,
+				4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */,
 				4880C63E24CA1BF8004A8E54 /* viewControllers */,
 				606A94C1211B7FC9008FF650 /* MapSearch */,
 				606A94C0211B7FC9008FF650 /* Products */,
@@ -289,6 +295,8 @@
 				606A94C3211B7FC9008FF650 /* AppDelegate.swift in Sources */,
 				606A94D8211B802D008FF650 /* SearchResultTableViewController.swift in Sources */,
 				606A94D7211B802D008FF650 /* MapViewController.swift in Sources */,
+				4880C64224CA1DA5004A8E54 /* reportViewController.swift in Sources */,
+				4880C64424CA1DFD004A8E54 /* testInputTableViewCell.swift in Sources */,
 				4880C63824CA16F5004A8E54 /* timeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

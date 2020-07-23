@@ -1,8 +1,7 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
 Abstract:
 Primary view controller used to display search results.
+ Iterated by Hubert Lachaîne, July 21st 2020
 */
 
 import UIKit
@@ -87,28 +86,31 @@ class SearchResultTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mapViewController = segue.destination as? MapViewController else {
+        guard let mapViewController = segue.destination as? timeViewController else {
             return
         }
-        
+        //Handling selected value from the list
         if segue.identifier == SegueID.showDetail.rawValue {
             // Get the single item.
             guard let selectedItemPath = tableView.indexPathForSelectedRow, let mapItem = places?[selectedItemPath.row] else { return }
             
-            // Pass the new bounding region to the map destination view controller and center it on the single placemark.
-            var region = boundingRegion
-            region.center = mapItem.placemark.coordinate
-            mapViewController.boundingRegion = region
-            
             // Pass the individual place to our map destination view controller.
-            mapViewController.mapItems = [mapItem]
+            Global.MapTempInfo.mapItems.append(String(mapItem.name!))
+            var a,b: Double
+            a = mapItem.placemark.location?.coordinate.latitude as! Double
+            b = mapItem.placemark.location?.coordinate.longitude as! Double
+            
+            Global.MapTempInfo.coordinates.append(String(a) + "," + String(b))
+            
+            let x = Global.MapTempInfo.mapItems.firstIndex(of: "")
+            if x == 0 {
+                Global.MapTempInfo.mapItems.removeFirst()
+                Global.MapTempInfo.coordinates.removeFirst()
+            }
+            
+            print(Global.MapTempInfo.mapItems[0])
+            print(Global.MapTempInfo.coordinates[0])
         } else if segue.identifier == SegueID.showAll.rawValue {
-            
-            // Pass the new bounding region to the map destination view controller.
-            mapViewController.boundingRegion = boundingRegion
-            
-            // Pass the list of places found to our map destination view controller.
-            mapViewController.mapItems = places
         }
     }
     
@@ -294,3 +296,4 @@ extension SearchResultTableViewController: UISearchBarDelegate {
         search(for: searchBar.text)
     }
 }
+
