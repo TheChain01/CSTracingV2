@@ -125,9 +125,10 @@ class reportViewController: UITableViewController {
         let encoded = String(e.replacingOccurrences(of: ".", with: ",")) + " *" + sep[1]
         
         db.collection("HotSpots").document("byDates").updateData([reunified: FieldValue.arrayUnion([encoded])])
-        
+        print(encoded)
         i+=1
     }
+        
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
