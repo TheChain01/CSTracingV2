@@ -75,11 +75,24 @@
 			name = "Firebase Files";
 			sourceTree = "<group>";
 		};
+		4880C63E24CA1BF8004A8E54 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				606A94D4211B802C008FF650 /* MapViewController.swift */,
+				4880C63724CA16F5004A8E54 /* timeViewController.swift */,
+				606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */,
+				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
 		606A94B6211B7FC9008FF650 = {
 			isa = PBXGroup;
 			children = (
 				606A94DB211B80CF008FF650 /* README.md */,
-				606A94C1211B7FC9008FF650 /* CSTracing */,
+				4880C63924CA171C004A8E54 /* Global.swift */,
+				4880C63E24CA1BF8004A8E54 /* viewControllers */,
+				606A94C1211B7FC9008FF650 /* MapSearch */,
 				606A94C0211B7FC9008FF650 /* Products */,
 				4880C63D24CA190C004A8E54 /* Firebase Files */,
 				88B62DAC71F0D030E7773290 /* LICENSE */,
@@ -96,20 +109,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		606A94C1211B7FC9008FF650 /* CSTracing */ = {
+		606A94C1211B7FC9008FF650 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
 				606A94C2211B7FC9008FF650 /* AppDelegate.swift */,
-				606A94D4211B802C008FF650 /* MapViewController.swift */,
 				606A94E2211BBDD8008FF650 /* MKPlacemark+Extension.swift */,
 				606A94D6211B802D008FF650 /* PlaceAnnotation.swift */,
-				4880C63724CA16F5004A8E54 /* timeViewController.swift */,
-				4880C63924CA171C004A8E54 /* Global.swift */,
 				606A94DA211B803C008FF650 /* Resources */,
-				606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */,
-				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
 			);
-			path = CSTracing;
+			path = MapSearch;
 			sourceTree = "<group>";
 		};
 		606A94DA211B803C008FF650 /* Resources */ = {
