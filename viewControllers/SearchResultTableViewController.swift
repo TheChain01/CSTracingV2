@@ -22,14 +22,13 @@ class SearchResultTableViewController: UITableViewController {
     private var places: [MKMapItem]? {
         didSet {
             tableView.reloadData()
-            viewAllButton.isEnabled = places != nil
         }
     }
     
     private var suggestionController: SuggestionsTableViewController!
     private var searchController: UISearchController!
 
-    @IBOutlet private var viewAllButton: UIBarButtonItem!
+    
     
     private let locationManager = CLLocationManager()
     private var currentPlacemark: CLPlacemark?

@@ -113,6 +113,15 @@ class reportViewController: UITableViewController {
             return cell
         }
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        
+        guard editingStyle == .delete else {return}
+        Global.MapTempInfo.coordinates.remove(at: indexPath.row)
+        Global.MapTempInfo.mapItems.remove(at: indexPath.row)
+        Global.MapTempInfo.timeStamps.remove(at: indexPath.row)
+        
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
     
     @IBAction func subPressed(_ sender: Any) {
     let db = Firestore.firestore()

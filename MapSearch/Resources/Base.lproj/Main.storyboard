@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="TpQ-J8-wXr" customClass="SearchResultTableViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eBa-WV-hst">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -46,12 +46,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="WHERE?" id="lbr-sc-yth">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="View All" id="vYj-eD-j4s"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="viewAllButton" destination="vYj-eD-j4s" id="TIw-eb-GE6"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="WHERE?" id="lbr-sc-yth"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2im-l3-9oE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,17 +57,17 @@
             <objects>
                 <viewController id="5zS-DS-oie" customClass="timeViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gis-w5-s4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-Hg-PJ4">
-                                <rect key="frame" x="-20" y="215.5" width="415" height="216"/>
+                                <rect key="frame" x="-20" y="247.5" width="415" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
                                     <!--2020-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-rv-Sqg">
-                                <rect key="frame" x="40" y="517" width="295" height="50"/>
+                                <rect key="frame" x="40" y="537" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="fo8-hW-FX2"/>
                                 </constraints>
@@ -110,7 +105,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="FZL-6i-mhE" customClass="reportViewController" customModule="CSTracing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="50" sectionFooterHeight="28" id="XER-az-DGE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -341,6 +336,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rZL-pj-lvn"/>
+        <segue reference="HMh-DV-Yil"/>
     </inferredMetricsTieBreakers>
 </document>
