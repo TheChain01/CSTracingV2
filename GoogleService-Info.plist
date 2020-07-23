@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>816857531006-vqt4gjqm6om5o6kiej229t47un62k375.apps.googleusercontent.com</string>
+	<string>816857531006-h126s8ppk90q6ahqncheju373velj8r2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.816857531006-vqt4gjqm6om5o6kiej229t47un62k375</string>
+	<string>com.googleusercontent.apps.816857531006-h126s8ppk90q6ahqncheju373velj8r2</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAzR5VTq50yMbnfgEUWjj0C8iOoy7esI0k</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Lachaine.CSTracing</string>
+	<string>CSTracingV2</string>
 	<key>PROJECT_ID</key>
 	<string>segfinal-c7b60</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:816857531006:ios:b04a77f536b8d697e00e2f</string>
+	<string>1:816857531006:ios:de6bc21e3089e613e00e2f</string>
 	<key>DATABASE_URL</key>
 	<string>https://segfinal-c7b60.firebaseio.com</string>
 </dict>

@@ -22,6 +22,8 @@ class timeViewController: UIViewController {
         navigationItem.title = "WHEN?"
         navigationController?.navigationBar.backgroundColor = UIColor.systemOrange
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        Utilities.styleHollowButton(submitButton)
     }
     
     @IBAction func submitPressed(_ sender: Any) {
