@@ -3,7 +3,7 @@
 //
 //  Created by Hubert Lachaîne on 2020-03-25. To be used on multiple projects
 //  Copyright © 2020 Hubert Lachaîne. All rights reserved.
-//
+//  This files is a utilities file created to stylize various UI items. It is used through various of my projects in order to have basic styling.
 
 import Foundation
 import UIKit

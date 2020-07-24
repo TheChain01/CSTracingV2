@@ -13,6 +13,8 @@ import Firebase
 
 class mapViewController: UIViewController, CLLocationManagerDelegate {
     
+    //This is the view controller file for the HotSpot map which highlights with pins various locations that were visited by covid19 patient
+    
     private enum AnnotationReuseID: String {
         case pin
     }
@@ -37,35 +39,23 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         Utilities.stylePremiumButton(recenterButton)
         
         
-        
+        //Setup for annotations on the map
         Map.delegate = self
         
         Map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: AnnotationReuseID.pin.rawValue)
         Map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         
-        let docRef = db.collection("HotSpots").document("byDates")
-        let dateFormatter = DateFormatter()
+        var dateFormatter = DateFormatter()
         
         dateFormatter.dateStyle = .short
         
-        let selectedDate = dateFormatter.string(from: datePicker.date)
+        var selectedDate = dateFormatter.string(from: datePicker.date)
         print(selectedDate)
         print("date")
         let t = selectedDate.split(separator: "/")
         let reunified = t[0] + "-" + t[1] + "-" + t[2]
         print(reunified)
-
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dateLocations = document.data()
-                
-                let dates = dateLocations![reunified] as? [String]
-                print(dates!)
-                self.markerUpdate(places: dates)
-            } else {
-                print("Document does not exist")
-            }
-        }
+        FirebaseInfoQuery(date: reunified)
         
         if (CLLocationManager.locationServicesEnabled())
         {
@@ -79,6 +69,7 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
+        //Function to get the user's position
 
         let location = locations.last! as CLLocation
         userRegion = location
@@ -99,7 +90,8 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func dateChanged(_ sender: Any) {
-        let docRef = db.collection("HotSpots").document("byDates")
+        //Function that listen to changes on the datepicker in order to update the map accordingly
+        
         var dateFormatter = DateFormatter()
         
         dateFormatter.dateStyle = .short
@@ -110,21 +102,11 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         let t = selectedDate.split(separator: "/")
         let reunified = t[0] + "-" + t[1] + "-" + t[2]
         print(reunified)
-
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dateLocations = document.data()
-                
-                let dates = dateLocations![reunified] as? [String]
-                print(dates)
-                self.markerUpdate(places: dates)
-            } else {
-                print("Document does not exist")
-            }
-        }
+        FirebaseInfoQuery(date: reunified)
         
     }
     func markerUpdate(places: [String]?){
+        //Function that updates all the annotations on the map in order to show the selected date confirmed locations
         Map.removeAnnotations(Map.annotations)
         guard (places != nil) else {
             return
@@ -154,6 +136,20 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
             
             Map.addAnnotation(annotation)
             
+        }
+    }
+    func FirebaseInfoQuery(date: String){
+        let docRef = db.collection("HotSpots").document("byDates")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dateLocations = document.data()
+                
+                let dates = dateLocations![date] as? [String]
+                self.markerUpdate(places: dates)
+            } else {
+                print("Document does not exist")
+            }
         }
     }
 }

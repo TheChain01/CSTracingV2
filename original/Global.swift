@@ -3,8 +3,8 @@
 //  MapSearch
 //
 //  Created by Hubert Lachaîne on 2020-07-23.
-//  Copyright © 2020 Apple. All rights reserved.
-//
+//  Copyright © 2020 Hubert Lachaîne. All rights reserved.
+//  This files holds global variables that can be access from different view controllers
 
 import Foundation
 import MapKit

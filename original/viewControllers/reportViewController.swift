@@ -12,6 +12,8 @@ import Firebase
 
 class reportViewController: UITableViewController {
     
+    //This is the view controller for the report form page of the app
+    
     @IBOutlet weak var submitButt: UIBarButtonItem!
     
     
@@ -23,7 +25,7 @@ class reportViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //Styling.
         navigationItem.title = "Tracing Submission"
         navigationController?.navigationBar.backgroundColor = UIColor.systemOrange
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -32,6 +34,7 @@ class reportViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //Headers configurations
         if section == 3 {
             
             let button = UIButton(type: .system)
@@ -60,7 +63,7 @@ class reportViewController: UITableViewController {
             return label
         }
     }
-    
+    //The next four functions are configuration function for the tableview
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -114,7 +117,7 @@ class reportViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        
+        //Creates the delete animation and logic within the table view
         guard editingStyle == .delete else {return}
         Global.MapTempInfo.coordinates.remove(at: indexPath.row)
         Global.MapTempInfo.mapItems.remove(at: indexPath.row)
@@ -124,6 +127,7 @@ class reportViewController: UITableViewController {
     }
     
     @IBAction func subPressed(_ sender: Any) {
+        //This function sends the form data to a cloud platform (Firebase in this case) in order to store all the data there which can be later accessed from within the Map tracing menu.
     let db = Firestore.firestore()
     var i = 0
         
@@ -161,12 +165,12 @@ class reportViewController: UITableViewController {
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
+        //unwindsegue performed
         Global.MapTempInfo.mapItems.removeAll()
         Global.MapTempInfo.coordinates.removeAll()
     }
     
     @objc func addNewLocations (){
-        print("new Location!")
         performSegue(withIdentifier: "addNew", sender: nil)
     }
     

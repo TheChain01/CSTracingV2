@@ -11,6 +11,8 @@ import CoreLocation
 
 class timeViewController: UIViewController {
     
+    //This class is th eview controller for the Date picker on the submission form
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var submitButton: UIButton!

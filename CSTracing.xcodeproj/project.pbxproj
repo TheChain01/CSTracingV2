@@ -75,6 +75,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4822B18C24CA567600E73A9F /* original */ = {
+			isa = PBXGroup;
+			children = (
+				4880C64924CA1FDC004A8E54 /* ViewController.swift */,
+				4880C63924CA171C004A8E54 /* Global.swift */,
+				4880C63E24CA1BF8004A8E54 /* viewControllers */,
+				4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */,
+			);
+			path = original;
+			sourceTree = "<group>";
+		};
 		4880C63D24CA190C004A8E54 /* Firebase Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +99,8 @@
 			children = (
 				4880C63724CA16F5004A8E54 /* timeViewController.swift */,
 				606A94D5211B802D008FF650 /* SearchResultTableViewController.swift */,
-				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
 				4880C64124CA1DA5004A8E54 /* reportViewController.swift */,
 				4880C64724CA1FBC004A8E54 /* mapViewController.swift */,
-				4880C64924CA1FDC004A8E54 /* ViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -100,9 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				606A94DB211B80CF008FF650 /* README.md */,
-				4880C63924CA171C004A8E54 /* Global.swift */,
-				4880C64324CA1DFD004A8E54 /* testInputTableViewCell.swift */,
-				4880C63E24CA1BF8004A8E54 /* viewControllers */,
+				606A94C2211B7FC9008FF650 /* AppDelegate.swift */,
+				4822B18C24CA567600E73A9F /* original */,
 				606A94C1211B7FC9008FF650 /* MapSearch */,
 				606A94C0211B7FC9008FF650 /* Products */,
 				4880C63D24CA190C004A8E54 /* Firebase Files */,
@@ -123,10 +131,10 @@
 		606A94C1211B7FC9008FF650 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
-				606A94C2211B7FC9008FF650 /* AppDelegate.swift */,
+				606A94DE211B93CB008FF650 /* SuggestionsTableViewController.swift */,
+				606A94DA211B803C008FF650 /* Resources */,
 				606A94E2211BBDD8008FF650 /* MKPlacemark+Extension.swift */,
 				606A94D6211B802D008FF650 /* PlaceAnnotation.swift */,
-				606A94DA211B803C008FF650 /* Resources */,
 			);
 			path = MapSearch;
 			sourceTree = "<group>";
@@ -459,6 +467,7 @@
 			baseConfigurationReference = E9920A5F5124074A54E89D39 /* Pods-CSTracing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CMNMNK68BV;
 				INFOPLIST_FILE = "$(SRCROOT)/MapSearch/Resources/Info.plist";
@@ -476,6 +485,7 @@
 			baseConfigurationReference = 3944DDA0E8DD68D8D068A055 /* Pods-CSTracing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CMNMNK68BV;
 				INFOPLIST_FILE = "$(SRCROOT)/MapSearch/Resources/Info.plist";

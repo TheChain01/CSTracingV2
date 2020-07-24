@@ -1,7 +1,7 @@
 /*
 Abstract:
 Primary view controller used to display search results.
- Iterated by Hubert Lachaîne, July 21st 2020
+ Iterated by Hubert Lachaîne, July 21st 2020. Base work made by APPLE as part of a tutorial showing the basics of the MapKit
 */
 
 import UIKit
