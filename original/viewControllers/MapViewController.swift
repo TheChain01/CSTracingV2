@@ -95,10 +95,10 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         
         dateFormatter.dateStyle = .short
         
-        var selectedDate = dateFormatlet.string(from: datePicker.date)
+        var selectedDate = dateFormatter.string(from: datePicker.date)
         print(selectedDate)
         print("date")
-        let t = selletedDate.split(separator: "/")
+        let t = selectedDate.split(separator: "/")
         let reunified = t[0] + "-" + t[1] + "-" + t[2]
         print(reunified)
         FirebaseInfoQuery(date: reunified)
