@@ -45,11 +45,11 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         Map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: AnnotationReuseID.pin.rawValue)
         Map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         
         dateFormatter.dateStyle = .short
         
-        var selectedDate = dateFormatter.string(from: datePicker.date)
+        let selectedDate = dateFormatter.string(from: datePicker.date)
         print(selectedDate)
         print("date")
         let t = selectedDate.split(separator: "/")
@@ -76,7 +76,6 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         manager.stopUpdatingLocation()
 
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let userlocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
         self.Map.setRegion(region, animated: true)
     }
@@ -96,10 +95,10 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         
         dateFormatter.dateStyle = .short
         
-        var selectedDate = dateFormatter.string(from: datePicker.date)
+        var selectedDate = dateFormatlet.string(from: datePicker.date)
         print(selectedDate)
         print("date")
-        let t = selectedDate.split(separator: "/")
+        let t = selletedDate.split(separator: "/")
         let reunified = t[0] + "-" + t[1] + "-" + t[2]
         print(reunified)
         FirebaseInfoQuery(date: reunified)
@@ -139,6 +138,7 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     func FirebaseInfoQuery(date: String){
+        //Function used to request the data from the cloud database and display it onto the map for the user
         let docRef = db.collection("HotSpots").document("byDates")
 
         docRef.getDocument { (document, error) in
