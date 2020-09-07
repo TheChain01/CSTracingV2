@@ -39,6 +39,8 @@ class SearchResultTableViewController: UITableViewController {
     private var localSearch: MKLocalSearch? {
         willSet {
             // Clear the results and cancel the currently running local search before starting a new search.
+            
+            
             places = nil
             localSearch?.cancel()
         }
